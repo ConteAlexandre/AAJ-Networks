@@ -82,12 +82,42 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             $Network['authorized']++;
         }
     }
-    debug($Network);
-    echo $totalCo;
+    //debug($Network);
+    //echo $totalCo;
     debug($listIp);
 
+
+
 }
+
+include 'header.php';
 ?>
 
 
+<canvas id="bar-chart" width="400" height="225"></canvas>
 
+<script>// Bar chart
+    new Chart(document.getElementById("bar-chart"), {
+        type: 'bar',
+        data: {
+            labels:[2,2],
+
+            datasets: [{
+                label: "En nombre de protocoles",
+                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#b45850","#c42a50","#c14750","#d40120","#ae550","#f41850","#685az0","#bf81b","#587512","#a784be","#c8751e","#875fa7","#e875ac","#784abb","#abcdef","#123456","#789123","#fedcba","#4875ac"],
+                data: ['bla','na']
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Répartition des différents protocoles'
+            }
+        }
+    });
+    </script>
+
+
+<?php
+include 'footer.php';
+?>
