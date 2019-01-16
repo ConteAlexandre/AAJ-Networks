@@ -9,7 +9,7 @@ $json_source = file_get_contents("data/file.json");
 <div class="right_col role="main"">
     <div class="">
         <div class="">
-            <div class="title_left">
+            <div class="title_left text-center">
                 <h3>Distribution of protocols</h3>
             </div>
         <div class="clearfix"></div>
@@ -18,22 +18,22 @@ $json_source = file_get_contents("data/file.json");
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
 
-                    <p class="big-para white">You can see the list and a pie of your protocols</p>
+                    <p class="big-para white text-center">You can see the list and a pie of your protocols</p>
 
-                    <form class="protocolsForm" action="" method="post" enctype="multipart/form-data">
-                        <!-- <label for="type_trame">Choose a type:</label>
-                         <select id="type_trame" name="type_trame">
-                             <option value="not">--Please choose an option--</option>
-                             <option value="frame">Frame</option>
-                             <option value="eth">ETH</option>
-                             <option value="vlan">VLAN</option>
-                             <option value="ip">IP</option>
-                             <option value="tcp">TCP</option>
-                         </select>
-                         <br>-->
-                        <input type="submit" name="submitted" class="btn btn-info button center-block btnbleu" value="SEE">
+                    <!-- <form class="protocolsForm" action="" method="post" enctype="multipart/form-data">
+                          <label for="type_trame">Choose a type:</label>
+                          <select id="type_trame" name="type_trame">
+                              <option value="not">--Please choose an option--</option>
+                              <option value="frame">Frame</option>
+                              <option value="eth">ETH</option>
+                              <option value="vlan">VLAN</option>
+                              <option value="ip">IP</option>
+                              <option value="tcp">TCP</option>
+                          </select>
+                          <br>
+                         <input type="submit" name="submitted" class="btn btn-info button center-block btnbleu" value="SEE">
 
-                    </form>
+                     </form>-->
 
                 </div>
             </div>
@@ -44,7 +44,7 @@ $json_source = file_get_contents("data/file.json");
             <div class="col-md-12 col-sm-12 col-xs-12">
 
                     <?php
-                    if (isset($_POST['submitted'])) {
+
 
                     if (!empty($json_source)) {
                     // Décode le JSON
@@ -89,7 +89,7 @@ $json_source = file_get_contents("data/file.json");
 
 
                         }
-                        }
+
                         ?>
 
                 </div>
@@ -100,9 +100,7 @@ $json_source = file_get_contents("data/file.json");
     </div>
 </div>
 
-<div class="x_content">
-    <canvas id="pieChart"></canvas>
-</div>
+
 <script>
     new Chart(document.getElementById("pie-chart"), {
         type: 'pie',
