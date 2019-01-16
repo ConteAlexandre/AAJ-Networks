@@ -8,3 +8,7 @@ vendor/*
 production
 production/
 production/*
+nbproject
+npm-debug.log
+node_modules
+.sass-cache
