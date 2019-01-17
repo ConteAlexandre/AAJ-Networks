@@ -156,7 +156,7 @@ $recupip = $query2->fetchAll();
                                 <td>'.$donneeip['macaddr'].'</td>
                                 <td>'.$donneeip['INET_NTOA(mask)'].'</td>
                                 <td><a href="deleteip.php?id='.$donneeip['id'].'" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer définitevement cette adresse ip?\')"><img src="https://img.icons8.com/metro/24/000000/delete-database.png"></a></td>
-                                <td><a href="includes/analyse.php?id='. $donneeip['id'] . '"  onclick="window.open(this.href, \'exemple\', \'height=400, width=800, top=100, left=100, toolbar=no, menubar=yes, location=no, resizable=yes, scrollbars=no, status=no\') ; return false;"><img src="https://img.icons8.com/metro/24/000000/view-file.png" alt=""></a></td>
+                                <td><a href="analyse.php?id='. $donneeip['id'] . '"  onclick="window.open(this.href, \'exemple\', \'height=400, width=800, top=100, left=100, toolbar=no, menubar=yes, location=no, resizable=yes, scrollbars=no, status=no\') ; return false;"><img src="https://img.icons8.com/metro/24/000000/view-file.png" alt=""></a></td>
                                </tr>';
                     }
                     ?>

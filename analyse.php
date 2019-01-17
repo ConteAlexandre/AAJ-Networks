@@ -23,7 +23,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     debug($listServer);
 
 
-    $json = file_get_contents('../data/file.json');
+    $json = file_get_contents('data/file.json');
     $content = json_decode($json, true);
 
     $Network = array(
