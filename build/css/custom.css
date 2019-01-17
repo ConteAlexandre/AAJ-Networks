@@ -2,8 +2,6 @@
 html , body{
 
     height:100%;
-
-
 }
 
 .full-width {
@@ -4258,11 +4256,13 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 .titrepadd {
     margin-bottom: 40px;
+
     color: #B27E45;
 }
 
 .titrebrun {
   color: #B27E45!important;
+
 }
 
 .paddbtn {
@@ -4291,17 +4291,18 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 }
 
 .nav-md .container.body .right_col {
+
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
+
 }
 
 .whitespan {
     position: absolute;
     color: black;
 }
-
 
 
 .blanc {
@@ -4353,3 +4354,4 @@ ol li {
 .margintop {
     margin-top: 50px;
 }
+
