@@ -16,42 +16,42 @@ if (!empty($_POST['submitted'])){
 
     if (!empty($name)){
         if (strlen($name) < 8 ){
-            $error['name'] = 'Veuillez mettre plus de caratères!';
+            $error['name'] = '8 characteres minimum';
         }elseif (strlen($name) > 75 ){
-            $error['name'] = 'Veuillez mettre moins de caratères';
+            $error['name'] = '75 characteres maximum';
         }
     }else {
-        $error['name'] = 'Veuillez rempir ce champs!';
+        $error['name'] = 'Please fill the field';
     }
 
     if (!empty($ip)){
         if (filter_var($ip, FILTER_VALIDATE_IP)){
 
         }else{
-            $error['ip'] = 'Veuillez rentrer une adresse ip valide!';
+            $error['ip'] = 'Please write a valid ip address';
         }
     }else{
-        $error['ip'] = 'Veuillez remplir ce champs!';
+        $error['ip'] = 'Please fill the field';
     }
 
     if (!empty($mac)){
         if (filter_var($mac, FILTER_VALIDATE_MAC)){
 
         }else{
-            $error['mac'] = 'Veuillez rentrer une adresse mac valide!';
+            $error['mac'] = 'Please write a valid mac address';
         }
     }else{
-        $error['mac'] = 'Veuillez remplir ce champs!';
+        $error['mac'] = 'Please fill the field';
     }
 
     if (!empty($mask)){
         if (filter_var($mask, FILTER_VALIDATE_IP)){
 
         }else{
-            $error['mask'] = 'Veuillez rentrer une adresse mask valide!';
+            $error['mask'] = 'Please write a valid mask address';
         }
     }else{
-        $error['mask'] = 'Veuillez remplir ce champs!';
+        $error['mask'] = 'Please fill the field';
     }
 
 
@@ -92,37 +92,37 @@ $recupip = $query2->fetchAll();
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <form class="form-horizontal form-label-left" method="post">
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Server's name<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="name">Server's name<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Office" required="required" type="text">
+                            <input id="name" class="form-control col-md-7 col-xs-12 tspt" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Office" required="required" type="text">
                             <span class="error"><?php if (!empty($error['name'])){ echo $error['name']; } ?></span>
 
                         </div>
                     </div>
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ip">IP source <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="ip">IP source <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="ip" placeholder="198.168.1.1" required="required" type="text">
+                            <input id="name" class="form-control col-md-7 col-xs-12 tspt" data-validate-length-range="6" data-validate-words="2" name="ip" placeholder="198.168.1.1" required="required" type="text">
                             <span class="error"><?php if (isset($error['ip'])){ echo $error['ip']; } ?></span>
                         </div>
                     </div>
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mac">MAC adress <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="mac">MAC adress <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 tspt">
                             <input id="mac" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mac" placeholder="22:22:22:22:22" required="required" type="text">
                             <span class="error"><?php if (isset($error['mac'])){ echo $error['mac']; } ?></span>
                         </div>
                     </div>
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mask">Mask adress <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="mask">Mask adress <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 tspt">
                             <input id="mask" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mask" placeholder="255.255.250.1" required="required" type="text">
                             <span class="error"><?php if (isset($error['mask'])){ echo $error['mask']; } ?></span>
                         </div>
@@ -138,15 +138,20 @@ $recupip = $query2->fetchAll();
             </div>
         </div>
         <div class="row">
+<<<<<<< HEAD
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <table class="tableauip table table-bordered table-striped text-center">
+=======
+            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                <table class="tableauip table table-bordered table-hover ">
+>>>>>>> af16e4c4d448336da36f6d9721043782035cedaa
                     <tr>
-                        <td>Name</td>
-                        <td>IP</td>
-                        <td>MAC Adress</td>
-                        <td>MAsk Adress</td>
-                        <td>Supprimer</td>
-                        <td>Analyser</td>
+                        <th scope="col">Name</th>
+                        <th scope="col">IP</th>
+                        <th scope="col">MAC Adress</th>
+                        <th scope="col">MAsk Adress</th>
+                        <th scope="col">Supprimer</th>
+                        <th >Analyser</th>
                     </tr>
                     <?php
                     foreach ($recupip as $donneeip){
