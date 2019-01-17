@@ -114,7 +114,7 @@ $recupip = $query2->fetchAll();
                         <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="mac">MAC adress <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12 tspt">
-                            <input id="mac" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mac" placeholder="22:22:22:22:22" required="required" type="text">
+                            <input id="mac" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mac" placeholder="01:80:C2:00:00:00	" required="required" type="text">
                             <span class="error"><?php if (isset($error['mac'])){ echo $error['mac']; } ?></span>
                         </div>
                     </div>
@@ -138,20 +138,17 @@ $recupip = $query2->fetchAll();
             </div>
         </div>
         <div class="row">
-<<<<<<< HEAD
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <table class="tableauip table table-bordered table-striped text-center">
-=======
+
             <div class="col-md-12 col-sm-12 col-xs-12 ">
-                <table class="tableauip table table-bordered table-hover ">
->>>>>>> af16e4c4d448336da36f6d9721043782035cedaa
-                    <tr>
+                <table class="tableauip table table-bordered table-hover text-center">
+
+                    <tr class="text-center">
                         <th scope="col">Name</th>
                         <th scope="col">IP</th>
                         <th scope="col">MAC Adress</th>
                         <th scope="col">MAsk Adress</th>
-                        <th scope="col">Supprimer</th>
-                        <th >Analyser</th>
+                        <th scope="col">Delete</th>
+                        <th >Analyse</th>
                     </tr>
                     <?php
                     foreach ($recupip as $donneeip){
@@ -160,8 +157,8 @@ $recupip = $query2->fetchAll();
                                 <td>'.$donneeip['INET_NTOA(ip)'].'</td>
                                 <td>'.$donneeip['macaddr'].'</td>
                                 <td>'.$donneeip['INET_NTOA(mask)'].'</td>
-                                <td><a href="deleteip.php?id='.$donneeip['id'].'" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer définitevement cette adresse ip?\')"><img src="https://img.icons8.com/metro/24/000000/delete-database.png"></a></td>
-                                <td><a href="analyse.php?id='. $donneeip['id'] . '"  onclick="window.open(this.href, \'exemple\', \'height=400, width=800, top=100, left=100, toolbar=no, menubar=yes, location=no, resizable=yes, scrollbars=no, status=no\') ; return false;"><img src="https://img.icons8.com/metro/24/000000/view-file.png" alt=""></a></td>
+                                <td><a href="deleteip.php?id='.$donneeip['id'].'" onclick="return confirm(\'Are you sure you want to delete this IP address ?\')"><img src="https://img.icons8.com/metro/24/000000/delete-database.png"></a></td>
+                                <td><a href="analyse.php?id='. $donneeip['id'] . '"  onclick="window.open(this.href, \'exemple\', \'height=450, width=1100, top=100, left=100, toolbar=no, menubar=yes, location=no, resizable=no, scrollbars=no, status=no\') ; return false;"><img src="https://img.icons8.com/metro/24/000000/view-file.png" alt=""></a></td>
                                </tr>';
                     }
                     ?>

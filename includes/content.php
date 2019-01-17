@@ -5,7 +5,7 @@
             <div class="">
                 <div class="text-center ">
                     <h3 class="titrebrun imageheader">AAJ NETWORKS</h3>
-                    <p class="phraseheader">AAJ Networks is a software developped by our team to help you to </p>
+                    <p class="phraseheader">AAJ Networks is a software developed by our team to analyse your network frames. </p>
                 </div>
                 <div class="clearfix"></div>
 

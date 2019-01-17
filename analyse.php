@@ -84,17 +84,31 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 include 'includes/header.php';
 
 ?>
-<h2>The report</h2>
-<p>The analyse has been done with this IP source <strong><?php echo $listServer[0]['INET_NTOA(ip)'] ?></strong> and with this mask <strong><?php echo $listServer[0]['INET_NTOA(mask)'] ?></strong></p>
-<div class="text-center">
-<canvas id="bar-chart" width="200" height="100"></canvas>
-</div>
-<p>List of forbidden IP address</p>
-<ul>
-<?php foreach ($listIp as $key => $value){
-    echo '<li>The address'. $key .' tries to connect '. $value .' times '.' </li> '; }?>
-</ul>
 
+<h2 class="text-center titrebrun">The report</h2>
+<p class="text-center blanc">The analyse has been done with this IP source <strong><?php echo $listServer[0]['INET_NTOA(ip)'] ?></strong> and with this mask <strong><?php echo $listServer[0]['INET_NTOA(mask)'] ?></strong></p>
+<div class="text-center col-md-2"></div>
+    <div class="text-center col-md-9">
+        <canvas id="bar-chart" width="200" height="100"></canvas>
+    </div>
+<div class="text-center col-md-2"> </div>
+
+    <div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12"></div>
+        <p class="text-center blanc"><u>List of forbidden IP address</u></p>
+    </div>
+
+    <div class="clearfix"></div>
+
+<div class="row text-center"
+    <div class="col-md-12 ">
+        <?php foreach ($listIp as $key => $value){
+        echo '<p class="blanc">The address'. $key .' tried to connect '. $value .' times '.' </p> '; }?>
+    </div>
+
+</div>
 
 <script>// Bar chart
     new Chart(document.getElementById("bar-chart"), {

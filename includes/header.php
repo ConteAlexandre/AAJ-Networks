@@ -20,7 +20,7 @@
     <link href="build/css/custom.css" rel="stylesheet">
 
     <!-- Chart.js -->
-    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="vendors/Chart.js/dist/Chart.js"></script>
 
 </head>
 

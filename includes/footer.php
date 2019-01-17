@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-
-=======
-<!--<footer>-->
-<!---->
-<!---->
-<!--</footer>-->
->>>>>>> af16e4c4d448336da36f6d9721043782035cedaa
-<!-- /footer content -->
 
 <!-- jQuery -->
 <script src="vendors/jquery/dist/jquery.min.js"></script>

@@ -63,16 +63,23 @@ if (isset($_POST{'submitted'})){
             //Serveur d'envoi
             $mail->SMTPDebug = 0;
             $mail->isSMTP();
-            $mail->Host = 'smtp-mail.outlook.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'theluffy@hotmail.fr';
-            $mail->Password = 'OnePiece5!';
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            $mail->Host = 'localhost';
+            $mail->SMTPAuth = false;
+            $mail->Username = $email;
+            $mail->Password = null;
+            $mail->SMTPSecure = false;
+            $mail->Port = 1030;
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
 
             //Receveur
             $mail->setFrom($email);
-            $mail->addAddress('theluffy@hotmail.fr');
+            $mail->addAddress($email);
 
             //Contenu
             $mail->isHTML(true);

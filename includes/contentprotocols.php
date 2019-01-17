@@ -13,7 +13,7 @@ $json_source = file_get_contents("data/file.json");
                 <h3 class="titrebrun">Distribution of protocols</h3>
             </div>
                 <div class="clearfix"></div>
-                <div class="row">
+                <div class="row mb-5">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <p class="big-para text-center blanc italic">You can see the list and a pie of your protocols</p>
                             <!-- <form class="protocolsForm" action="" method="post" enctype="multipart/form-data">
@@ -34,17 +34,25 @@ $json_source = file_get_contents("data/file.json");
 
             <div class="clearfix"></div>
 
-                <div class="row">
-                        <div class="col-sm-7">
+            <div class="row margintop">
+                <div class="col-sm-12">
 
-                                <?php
-                                if (!empty($json_source)) {
-                                // Décode le JSON
-                                $json_data = json_decode($json_source, true);
-                                /* $datas = $_POST['type_trame'];*/
-                                ?>
-                                <p class="blanc">Nombre de Trame disponible : <span class="grand"><?php echo count($json_data) ?> </span></p>
-                                <?php
+                    <?php
+                    if (!empty($json_source)) {
+                    // Décode le JSON
+                    $json_data = json_decode($json_source, true);
+                    /* $datas = $_POST['type_trame'];*/
+                    ?>
+                    <p class="blanc"><span class="grand"><?php echo count($json_data) ?> </span> available frames</p>
+
+
+                </div>
+            </div>
+
+                <div class="row">
+                        <div class="col-sm-9">
+
+                                 <?php
                                     /*if ($datas != 'not') {
                                     foreach ($json_data as $v) {
 
@@ -61,23 +69,27 @@ $json_source = file_get_contents("data/file.json");
 
                                 ?>
                                 <canvas id="pie-chart" width="800" height="450"></canvas>
-                                <?php
 
-                                foreach ($protocols as $key => $value) {
-                                    $orderprotocols[$key] = $value ;
-                                }
-                                array_multisort($orderprotocols, SORT_DESC, $protocols);
-
-                                ?>                  <ol><?php
-                                    foreach ($protocols as $key => $value) {
-                                        echo '<li>' . $key . ' : ' . $value . '</li>';
-                                    }
-
-
-                                    }
-
-                                    ?>
                          </div>
+                    <div class="col-sm-3 text-center ">
+                            <br><br><br>
+                        <?php
+
+                        foreach ($protocols as $key => $value) {
+                            $orderprotocols[$key] = $value ;
+                        }
+                        array_multisort($orderprotocols, SORT_DESC, $protocols);
+
+                        ?>                  <ol><?php
+                            foreach ($protocols as $key => $value) {
+                                echo '<li>' . $key . ' : ' . $value . '</li>';
+                            }
+
+
+                            }
+
+                            ?>
+                    </div>
                 </div>
         </div>
     </div>
@@ -99,7 +111,7 @@ $json_source = file_get_contents("data/file.json");
         options: {
             title: {
                 display: true,
-                text: 'Répartition des différents protocoles'
+                text: ''
             }
         }
     });
