@@ -1,4 +1,4 @@
-<!--formulaire -->
+
 
 
 <?php
@@ -16,42 +16,42 @@ if (!empty($_POST['submitted'])){
 
     if (!empty($name)){
         if (strlen($name) < 8 ){
-            $error['name'] = 'Veuillez mettre plus de caratères!';
+            $error['name'] = '8 characteres minimum';
         }elseif (strlen($name) > 75 ){
-            $error['name'] = 'Veuillez mettre moins de caratères';
+            $error['name'] = '75 characteres maximum';
         }
     }else {
-        $error['name'] = 'Veuillez rempir ce champs!';
+        $error['name'] = 'Please fill the field';
     }
 
     if (!empty($ip)){
         if (filter_var($ip, FILTER_VALIDATE_IP)){
 
         }else{
-            $error['ip'] = 'Veuillez rentrer une adresse ip valide!';
+            $error['ip'] = 'Please write a valid ip address';
         }
     }else{
-        $error['ip'] = 'Veuillez remplir ce champs!';
+        $error['ip'] = 'Please fill the field';
     }
 
     if (!empty($mac)){
         if (filter_var($mac, FILTER_VALIDATE_MAC)){
 
         }else{
-            $error['mac'] = 'Veuillez rentrer une adresse mac valide!';
+            $error['mac'] = 'Please write a valid mac address';
         }
     }else{
-        $error['mac'] = 'Veuillez remplir ce champs!';
+        $error['mac'] = 'Please fill the field';
     }
 
     if (!empty($mask)){
         if (filter_var($mask, FILTER_VALIDATE_IP)){
 
         }else{
-            $error['mask'] = 'Veuillez rentrer une adresse mask valide!';
+            $error['mask'] = 'Please write a valid mask address';
         }
     }else{
-        $error['mask'] = 'Veuillez remplir ce champs!';
+        $error['mask'] = 'Please fill the field';
     }
 
 
@@ -81,91 +81,91 @@ $recupip = $query2->fetchAll();
 
 <!-- page content -->
 <div class="right_col role="main"">
+<div class="">
     <div class="">
-        <div class="">
-            <div class="title_left">
-                <h3>Add a server</h3>
-            </div>
+        <div class="text-center titrepadd">
+            <h3>Add a server</h3>
+        </div>
         <div class="clearfix"></div>
 
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                    <form class="form-horizontal form-label-left" method="post">
-                        <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name of the server<span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Office" required="required" type="text">
-                                <span class="error"><?php if (!empty($error['name'])){ echo $error['name']; } ?></span>
+                <form class="form-horizontal form-label-left" method="post">
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="name">Server's name<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12 tspt" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Office" required="required" type="text">
+                            <span class="error"><?php if (!empty($error['name'])){ echo $error['name']; } ?></span>
 
-                            </div>
                         </div>
+                    </div>
 
-                        <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ip">IP source <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="ip" placeholder="198.168.1.1" required="required" type="text">
-                                <span class="error"><?php if (isset($error['ip'])){ echo $error['ip']; } ?></span>
-                            </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="ip">IP source <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="name" class="form-control col-md-7 col-xs-12 tspt" data-validate-length-range="6" data-validate-words="2" name="ip" placeholder="198.168.1.1" required="required" type="text">
+                            <span class="error"><?php if (isset($error['ip'])){ echo $error['ip']; } ?></span>
                         </div>
+                    </div>
 
-                        <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mac">MAC adress <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="mac" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mac" placeholder="22:22:22:22:22" required="required" type="text">
-                                <span class="error"><?php if (isset($error['mac'])){ echo $error['mac']; } ?></span>
-                            </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="mac">MAC adress <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 tspt">
+                            <input id="mac" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mac" placeholder="01:80:C2:00:00:00	" required="required" type="text">
+                            <span class="error"><?php if (isset($error['mac'])){ echo $error['mac']; } ?></span>
                         </div>
+                    </div>
 
-                        <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mask">Mask adress <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="mask" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mask" placeholder="255.255.250.1" required="required" type="text">
-                                <span class="error"><?php if (isset($error['mask'])){ echo $error['mask']; } ?></span>
-                            </div>
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 blanc" for="mask">Mask adress <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 tspt">
+                            <input id="mask" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="mask" placeholder="255.255.250.1" required="required" type="text">
+                            <span class="error"><?php if (isset($error['mask'])){ echo $error['mask']; } ?></span>
                         </div>
+                    </div>
 
 
-                        <div class="ln_solid"></div>
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-3">
-                                <button type="submit" class="btn btn-primary">Cancel</button>
-                                <input type="submit" id="submitted" name="submitted" class="submitted btn btn-success" value="Submit">
-                            </div>
-                        </div>
-                    </form>
+                    <!--                        <div class="ln_solid"></div>-->
+                    <div class="form-group text-center paddbtn topmarg">
+                        <button type="submit" class="btn btn-danger">Cancel</button>
+                        <input type="submit" id="submitted" name="submitted" class="submitted btn btn-success " value="Submit">
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <table class="tableauip table table-bordered table-striped">
-                        <tr>
-                            <td>Name</td>
-                            <td>IP</td>
-                            <td>MAC Adress</td>
-                            <td>MAsk Adress</td>
-                            <td>Supprimer</td>
-                            <td>Analyser</td>
-                        </tr>
-                        <?php
-                        foreach ($recupip as $donneeip){
-                            echo '<tr>
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 ">
+                <table class="tableauip table table-bordered table-hover text-center">
+
+                    <tr class="text-center">
+                        <th scope="col">Name</th>
+                        <th scope="col">IP</th>
+                        <th scope="col">MAC Adress</th>
+                        <th scope="col">MAsk Adress</th>
+                        <th scope="col">Delete</th>
+                        <th >Analyse</th>
+                    </tr>
+                    <?php
+                    foreach ($recupip as $donneeip){
+                        echo '<tr>
                                 <td>'.$donneeip['name'].'</td>
                                 <td>'.$donneeip['INET_NTOA(ip)'].'</td>
                                 <td>'.$donneeip['macaddr'].'</td>
                                 <td>'.$donneeip['INET_NTOA(mask)'].'</td>
-                                <td><a href="deleteip.php?id='.$donneeip['id'].'" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer définitevement cette adresse ip?\')"><img src="https://img.icons8.com/metro/24/000000/delete-database.png"></a></td>
-                                <td><a href="tools.php"><img src="https://img.icons8.com/metro/24/000000/view-file.png"></a></td>
+                                <td><a href="deleteip.php?id='.$donneeip['id'].'" onclick="return confirm(\'Are you sure you want to delete this IP address ?\')"><img src="https://img.icons8.com/metro/24/000000/delete-database.png"></a></td>
+                                <td><a href="analyse.php?id='. $donneeip['id'] . '"  onclick="window.open(this.href, \'exemple\', \'height=450, width=1100, top=100, left=100, toolbar=no, menubar=yes, location=no, resizable=no, scrollbars=no, status=no\') ; return false;"><img src="https://img.icons8.com/metro/24/000000/view-file.png" alt=""></a></td>
                                </tr>';
-                        }
-                        ?>
+                    }
+                    ?>
 
-                    </table>
-                </div>
+                </table>
             </div>
-</div>
+        </div>
     </div>
+</div>
 </div>

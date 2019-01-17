@@ -17,10 +17,10 @@
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="build/css/custom.min.css" rel="stylesheet">
+    <link href="build/css/custom.css" rel="stylesheet">
 
     <!-- Chart.js -->
-    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="vendors/Chart.js/dist/Chart.js"></script>
 
 </head>
 
