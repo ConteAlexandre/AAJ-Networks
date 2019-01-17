@@ -3,9 +3,9 @@
     <div class="right_col" role="main">
         <div class="">
             <div class="">
-                <div class="text-center imageheader">
-                    <h3>AAJ Networks</h3>
-                    <p>dsfsdfksfokjxgdfdsfgdsf</p>
+                <div class="text-center ">
+                    <h3 class="titrebrun imageheader">AAJ NETWORKS</h3>
+                    <p class="phraseheader">AAJ Networks is a software developped by our team to help you to </p>
                 </div>
                 <div class="clearfix"></div>
 

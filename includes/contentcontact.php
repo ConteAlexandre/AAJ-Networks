@@ -99,7 +99,7 @@ if (isset($_POST{'submitted'})){
         <div class="">
             <div class="text-center">
                 <h3 class="section-title wow zoomIn titrepadd ">AAJ Networks</h3>
-                <p class="section-para  messagecontact text-center italic">For any questions or further details, please fill the form.</p>
+                <p class="section-para  messagecontact text-center italic blanc">For any questions or further details, please fill the form.</p>
             </div>
             <div class="clearfix"></div>
 
@@ -118,9 +118,9 @@ if (isset($_POST{'submitted'})){
                                         <div class="second-divider"><span class="left-divider"></span></div>
 
                                         <ul class="list-unstyled">
-                                            <li class="wow fadeInUp"><i class="fa fa-phone"></i> <span class="white">02.50.80.40.30 </span></li>
-                                            <li class="wow fadeInUp"><i class="fa fa-home"></i> <span class="white">24 place Saint-Marc, Rouen, France</span></li>
-                                            <li class="wow fadeInUp"><i class="fa fa-envelope-o"></i> <span class="white">contact@aajnetworks.com</span></li>
+                                            <li class="wow fadeInUp"><i class="fa fa-phone blanc"></i> <span class="blanc">02.50.80.40.30 </span></li>
+                                            <li class="wow fadeInUp"><i class="fa fa-home blanc"></i> <span class="blanc">24 place Saint-Marc, Rouen, France</span></li>
+                                            <li class="wow fadeInUp"><i class="fa fa-envelope-o blanc"></i> <span class="blanc">contact@aajnetworks.com</span></li>
                                         </ul>
 
                                     </div>
@@ -130,14 +130,14 @@ if (isset($_POST{'submitted'})){
                                                 <div class="col-sm-11 padd">
                                                     <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
                                                         <label class="sr-only">Your Name</label>
-                                                        <input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php if(isset($_POST['name'])) { echo $_POST['name'] ;} ?>">
+                                                        <input type="text" name="name" class="form-control tspt" placeholder="Your Name" value="<?php if(isset($_POST['name'])) { echo $_POST['name'] ;} ?>">
                                                         <span class="error" style="color: red;"><?php if (isset($error['name'])){ echo $error['name']; } ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-11">
                                                     <div class="form-group wow fadeInUp" data-wow-delay="0.4s">
                                                         <label class="sr-only">Your Email</label>
-                                                        <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php if(isset($_POST['email'])) { echo $_POST['email'] ;} ?>">
+                                                        <input type="email" name="email" class="form-control tspt" placeholder="Your Email" value="<?php if(isset($_POST['email'])) { echo $_POST['email'] ;} ?>">
                                                         <span class="error" style="color: red;"><?php if (isset($error['email'])){ echo $error['email']; } ?></span>
 
                                                     </div>
@@ -145,7 +145,7 @@ if (isset($_POST{'submitted'})){
                                                 <div class="col-sm-11">
                                                     <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
                                                         <label class="sr-only">Subject</label>
-                                                        <input type="text" name="subject" class="form-control" placeholder="Subject" value="<?php if(isset($_POST['subject'])) { echo $_POST['subject'] ;} ?>">
+                                                        <input type="text" name="subject" class="form-control tspt" placeholder="Subject" value="<?php if(isset($_POST['subject'])) { echo $_POST['subject'] ;} ?>">
                                                         <span class="error" style="color: red;"><?php if (isset($error['subject'])){ echo $error['subject']; } ?></span>
 
                                                     </div>
@@ -153,7 +153,7 @@ if (isset($_POST{'submitted'})){
                                                 <div class="col-sm-11 ">
                                                     <div class="form-group wow fadeInUp" data-wow-delay="0.8s">
                                                         <label class="sr-only">Message</label>
-                                                        <textarea class="form-control textarea" name="content" rows="5" placeholder="Message" value="<?php if(isset($_POST['content'])) { echo $_POST['content'] ;} ?>"></textarea>
+                                                        <textarea class="form-control textarea tspt" name="content" rows="5" placeholder="Message" value="<?php if(isset($_POST['content'])) { echo $_POST['content'] ;} ?>"></textarea>
                                                         <span class="error" style="color: red;"><?php if (isset($error['content'])){ echo $error['content']; } ?></span>
 
                                                     </div>

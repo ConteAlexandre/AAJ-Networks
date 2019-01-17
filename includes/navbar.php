@@ -3,7 +3,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.php" class="site_title"><i class="fa fa-chart"></i> <span>AAJ Networks</span></a>
+                    <a href="index.php" class="site_title"><i class="fa fa-chart"></i> <span class="titrepadd">AAJ Networks</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -13,9 +13,9 @@
                     <div class="profile_pic">
                         <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
                     </div>
-                    <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>Admin</h2>
+                    <div class="profile_info ">
+                        <span class="titrebrun">Welcome,</span>
+                        <h2 class="titrebrun">Admin</h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -26,12 +26,12 @@
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h3 class="titrebrun">General</h3>
                         <ul class="nav side-menu">
-                            <li><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
-                            <li><a href="addserver.php"><i class="fa fa-server"></i>Add server</a></li>
-                            <li><a href="protocols.php"><i class="fa fa-pie-chart"></i>Protocols</a></li>
-                            <li><a href="contact.php"><i class="fa fa-mail-reply"></i>Contact</a></li>
+                            <li><a href="index.php" class="titrebrun"><i class="fa fa-home"></i>Home</a></li>
+                            <li><a href="addserver.php" class="titrebrun"><i class="fa fa-server"></i>Add server</a></li>
+                            <li><a href="protocols.php" class="titrebrun"><i class="fa fa-pie-chart"></i>Protocols</a></li>
+                            <li><a href="contact.php" class="titrebrun"><i class="fa fa-mail-reply"></i>Contact</a></li>
                         </ul>
                     </div>
                 </div>

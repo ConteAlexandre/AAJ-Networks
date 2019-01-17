@@ -1,7 +1,7 @@
-<footer>
-
-
-</footer>
+<!--<footer>-->
+<!---->
+<!---->
+<!--</footer>-->
 <!-- /footer content -->
 
 <!-- jQuery -->

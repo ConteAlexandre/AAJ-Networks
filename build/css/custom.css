@@ -3,6 +3,7 @@ html , body{
 
     height:100%;
 
+
 }
 
 .full-width {
@@ -144,7 +145,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background: #2A3F54;
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -4257,6 +4258,11 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 .titrepadd {
     margin-bottom: 40px;
+    color: #B27E45;
+}
+
+.titrebrun {
+  color: #B27E45!important;
 }
 
 .paddbtn {
@@ -4285,11 +4291,57 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 }
 
 .nav-md .container.body .right_col {
-    background-image: url("../images/ordi.jpg");
-    background-size: 100%;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
 }
 
 .whitespan {
     position: absolute;
     color: black;
+}
+
+
+
+.blanc {
+    color: white;
+}
+
+.tspt {
+    opacity: .7;
+}
+
+.grand {
+    font-size: 1.3em;
+}
+
+ol li {
+    color: white;
+}
+
+#pie-chart {
+    margin-top: 15px;
+
+}
+
+.table {
+    background-color: white;
+    opacity: .7;
+}
+
+
+.imageheader {
+    font-weight: 600;
+    font-size: 1.9em;
+
+    text-transform: full-width;
+
+    margin-top: 70px;
+}
+
+.phraseheader {
+    padding-top: 70px;
+    color: white;
+    font-size: 1.5em;
 }
