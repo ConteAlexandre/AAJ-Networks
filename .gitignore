@@ -2,9 +2,10 @@
 .ideea/
 .idea/*
 DS_store
-vendor
-vendor/
-vendor/*
+includes/pdo.php
+vendors
+vendors/
+vendors/*
 production
 production/
 production/*
