@@ -1,14 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 15/01/2019
- * Time: 13:50
- */
-require "pdo.php";
-require "fonction.php";
-
-
+require "includes/pdo.php";
+require "includes/fonction.php";
 
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -19,8 +11,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $query->bindValue(':id', $id);
     $query->execute();
     $listServer = $query->fetchall();
-
-    debug($listServer);
 
 
     $json = file_get_contents('data/file.json');
@@ -68,7 +58,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 } else {
                     $ipSrc = explode('.', $contents['_source']['layers']['ip']['ip.src']);
                     if (!compareIP($ipSrc, $firstIp, $lastIp)) {
-                        echo "L'adresse " . $contents['_source']['layers']['ip']['ip.src'] . ' ne fait pas parti du même reseau<br>';
+                        $verifip = array();
+                        $verifip = "L'adresse " . $contents['_source']['layers']['ip']['ip.src'] . ' ne fait pas parti du même reseau<br>';
                         $ipSrc = implode('.', $ipSrc);
                         $listIp[$ipSrc] = $test;
 
@@ -82,36 +73,45 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             $Network['authorized']++;
         }
     }
-    //debug($Network);
+
     //echo $totalCo;
-    debug($listIp);
+
 
 
 
 }
 
-include 'header.php';
+include 'includes/header.php';
+
 ?>
+<h2>The report</h2>
+<p>The analyse has been done with this IP source <strong><?php echo $listServer[0]['INET_NTOA(ip)'] ?></strong> and with this mask <strong><?php echo $listServer[0]['INET_NTOA(mask)'] ?></strong></p>
+<div class="text-center">
+<canvas id="bar-chart" width="200" height="100"></canvas>
+</div>
+<p>List of forbidden IP address</p>
+<ul>
+<?php foreach ($listIp as $key => $value){
+    echo '<li>The address'. $key .' tries to connect '. $value .' times '.' </li> '; }?>
+</ul>
 
-
-<canvas id="bar-chart" width="400" height="225"></canvas>
 
 <script>// Bar chart
     new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
         data: {
-            labels:[2,2],
+            labels:[<?php foreach ($Network as $key => $value){ echo '"' . $key . '",'; }?>],
 
             datasets: [{
-                label: "En nombre de protocoles",
-                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#b45850","#c42a50","#c14750","#d40120","#ae550","#f41850","#685az0","#bf81b","#587512","#a784be","#c8751e","#875fa7","#e875ac","#784abb","#abcdef","#123456","#789123","#fedcba","#4875ac"],
-                data: ['bla','na']
+                label: "How many authorized and forbidden IP",
+                backgroundColor: ["#3e95cd", "#8e5ea2", "#8e5ea2", "#8e5ea2", "#8e5ea2", "#8e5ea2", "#8e5ea2"],
+                data: [<?php foreach ($Network as $key => $value){ echo '"' . $value . '",'; }?>]
             }]
         },
         options: {
             title: {
                 display: true,
-                text: 'Répartition des différents protocoles'
+
             }
         }
     });
@@ -119,5 +119,5 @@ include 'header.php';
 
 
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>

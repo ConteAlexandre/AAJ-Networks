@@ -61,7 +61,7 @@ if (isset($_POST{'submitted'})){
         $mail = new PHPMailer(true);
         try {
             //Serveur d'envoi
-            $mail->SMTPDebug = 1;
+            $mail->SMTPDebug = 0;
             $mail->isSMTP();
             $mail->Host = 'smtp-mail.outlook.com';
             $mail->SMTPAuth = true;
@@ -81,9 +81,9 @@ if (isset($_POST{'submitted'})){
             $mail->AltBody = $mail->Body;
 
             $mail->send();
-            echo '<span class="whitespan">Message sent</span>';
+            $sent = '<span class="whitespan" style="color: red;">Message sent</span>';
         } catch (Exception $e) {
-            echo '<span style="color: white;">Your message has not been sent</span>';
+            $unset = '<span style="color: red;">Your message has not been sent</span>';
         }
     }
 
@@ -164,6 +164,13 @@ if (isset($_POST{'submitted'})){
                                                     </div>
                                                 </div>
                                             </form>
+                                            <?php
+                                            if (isset($sent)){
+                                                echo $sent;
+                                            }elseif (isset($unset)){
+                                                echo $unset;
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
